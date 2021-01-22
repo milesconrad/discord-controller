@@ -1,2 +1,3 @@
 # discord-controller
-Discord bot that takes messages as keyboard input
+A discord bot that takes messages from a given channel and takes them as keyboard and mouse 
+commands. In order to use it you'll need to run 'pip install pydirectinput'.
