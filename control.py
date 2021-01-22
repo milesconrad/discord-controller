@@ -3,7 +3,7 @@ from discord.ext import commands
 import pydirectinput as con
 from pydirectinput import KEYBOARD_MAPPING
 from time import sleep as s
-token = 'Nzc5MjAyMTY0MzYyNzA2OTc1.X7dGkA.Uizee3sswKFR8elx4oiWesxMsfg'
+token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 bot = commands.Bot(command_prefix='/')
 
 print("Running...")
