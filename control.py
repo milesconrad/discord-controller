@@ -2,9 +2,11 @@ import discord
 from discord.ext import commands
 import pydirectinput as con
 from pydirectinput import KEYBOARD_MAPPING
+from pynput.keyboard import Controller
 from time import sleep as s
-token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 bot = commands.Bot(command_prefix='/')
+k = Controller()
 
 print("Running...")
 
@@ -30,11 +32,7 @@ async def on_message(msg):
             if st == 'm2':
                 con.click(button = 'right')
             if st.startswith('say'):
-                x = 3
-                while x <= len(st):
-                    con.keyDown(st[x])
-                    con.keyUp(st[x])
-                    x += 1
+                k.type(st[4:])
         await msg.delete()
 
 bot.run(token)
