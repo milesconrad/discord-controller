@@ -6,4 +6,4 @@ using pip.
 Of course, this is not something I would recommend you do with <i>anyone</i> you do not 
 completely trust. This is a program meant to be used for messing with your friends and 
 possibly providing tech support. It is by no means recommended you use this with anyone 
-outside of your immediate family of friend group.
+outside of your immediate family or friend group.
