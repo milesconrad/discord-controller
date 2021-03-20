@@ -31,7 +31,7 @@ async def on_message(msg):
                 control.click(button = 'left')
             if content == 'm2':
                 control.click(button = 'right')
-            if content.contentartswith('say'):
+            if content.startswith('say'):
                 keyboard.type(content[4:])
         await msg.delete()
 
