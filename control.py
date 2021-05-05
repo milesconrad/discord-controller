@@ -15,13 +15,11 @@ async def on_message(msg):
     if str(msg.channel) == 'pc-control':
         content = msg.content.lower()
 
-        #checks if selected key is a key object
         if content in KEYS:
             control.keyDown(content)
             sleep(0.4)
             control.keyUp(content)
         
-        #if selected key is not a key object, check if the key is a mouse movement
         else:
             if content == 'mup':
                 control.move(0, -200)
