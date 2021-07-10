@@ -1,41 +1,43 @@
 import discord
 from discord.ext import commands
+
 import pydirectinput as control
 from pydirectinput import KEYBOARD_MAPPING as KEYS
+
 from pynput.keyboard import Controller
 from time import sleep
-token = 'xxxxxxxxxxxxxxxxxxxxxxxx'
+
 bot = commands.Bot(command_prefix='/')
 keyboard = Controller()
 
 print("Running...")
 
 @bot.event
-async def on_message(msg):
-    if str(msg.channel) == 'pc-control':
-        content = msg.content.lower()
+async def on_message(message):
+    if str(message.channel) == 'pc-control':
+        message.content = message.content.lower()
 
-        if content in KEYS:
-            control.keyDown(content)
+        if message.content in KEYS:
+            control.keyDown(message.content)
             sleep(0.4)
-            control.keyUp(content)
+            control.keyUp(message.content)
         
         else:
-            if content == 'mup':
+            if message.content == 'mup':
                 control.move(0, -200)
-            if content == 'mdown':
+            if message.content == 'mdown':
                 control.move(0, 200)
-            if content == 'mleft':
+            if message.content == 'mleft':
                 control.move(-200, 0)
-            if content == 'mright':
+            if message.content == 'mright':
                 control.move(200, 0)
-            if content == 'm1':
+            if message.content == 'm1':
                 control.click(button = 'left')
-            if content == 'm2':
+            if message.content == 'm2':
                 control.click(button = 'right')
-            if content.startswith('say'):
-                keyboard.type(content[4:])
+            if message.content.startswith('say'):
+                keyboard.type(message.content[4:])
                 
-        await msg.delete()
+        await message.delete()
 
-bot.run(token)
+bot.run('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
