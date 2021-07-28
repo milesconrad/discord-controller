@@ -1,5 +1,5 @@
 # discord-controller
-A discord bot that takes messages from a given channel and takes them as keyboard and mouse commands. In order to use it you'll need to install pydirectinput, pynput, and discord.py using pip.
+A discord bot that takes messages from a given channel and texecutes them as keyboard and mouse commands. In order to use it you'll need to install pydirectinput, pynput, and discord.py using pip.
 
 After you've installed those packages, you will need to add a bot token, and make sure there is a #pc-control channel in the server you are using.
 
